@@ -1,0 +1,48 @@
+import random
+
+# Step 1: Word list
+words = ["apple", "tiger", "phone", "chair", "house"]
+
+# Step 2: Random word choose karo
+word = random.choice(words)
+guessed = ["_"] * len(word)  # _ _ _ _ _ format
+attempts = 6  # max incorrect guesses
+used_letters = []  # already guessed letters
+
+print("🎮 Welcome to Hangman!")
+print("Guess the word: ", " ".join(guessed))
+print(f"You have {attempts} incorrect guesses allowed.\n")
+
+# Step 3: Game loop
+while attempts > 0 and "_" in guessed:
+    guess = input("Enter a letter: ").lower()
+
+    # check valid input
+    if len(guess) != 1 or not guess.isalpha():
+        print("❌ Please enter a single alphabet only.")
+        continue
+    if guess in used_letters:
+        print("⚠️ You already guessed that letter.")
+        continue
+
+    used_letters.append(guess)
+
+    # Step 4: Check guess
+    if guess in word:
+        print(f"✅ Good job! {guess} is in the word.")
+        for i in range(len(word)):
+            if word[i] == guess:
+                guessed[i] = guess
+    else:
+        attempts -= 1
+        print(f"❌ Wrong guess! {attempts} attempts left.")
+
+    print("Word: ", " ".join(guessed))
+    print("Used letters:", " ".join(used_letters))
+    print()
+
+# Step 5: Result
+if "_" not in guessed:
+    print("🎉 Congratulations! You guessed the word:", word)
+else:
+    print("😢 Game Over! The word was:", word)
