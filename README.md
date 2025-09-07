@@ -1,2 +1,21 @@
 # CodeAlpha_hangman
-Excited to share my project “Hangman Game in Python” developed during my internship with @CodeAlpha 🎉 This project helped me strengthen my concepts of loops, conditionals, random library, and string manipulation. Grateful to CodeAlpha for the opportunity to learn and grow. 🚀  #CodeAlpha #Python #GameDevelopment #Internship #LearningByDoing
+
+A simple text-based Hangman game built in Python.  
+This project is part of my CodeAlpha internship tasks.
+
+## 📌 Features
+- Random word selection
+- Limited incorrect attempts (6)
+- Tracks used letters
+- Fun console-based gameplay
+
+## ▶️ How to Run
+1. Install Python (3.x recommended).
+2. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/codealpha_hangman.git
+   🎮 Welcome to Hangman!
+Guess the word:  _ _ _ _ _
+You have 6 incorrect guesses allowed.
+
+Enter a letter:
